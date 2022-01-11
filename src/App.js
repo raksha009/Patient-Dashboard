@@ -1,24 +1,63 @@
-import logo from './logo.svg';
+
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import './App.css';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SideNav
+    onSelect={(selected) => {
+      
+        <h2>Your Documents</h2>
+      
+    }}
+>
+    <SideNav.Toggle />
+    <SideNav.Nav defaultSelected="home">
+        <NavItem eventKey="home">
+            <NavIcon>
+                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+                Home
+            </NavText>
+        </NavItem>
+        <NavItem eventKey="Documents">
+            <NavIcon>
+                <i className="fa fa-fw fa-files-o" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+               Documents
+            </NavText>
+            <NavItem eventKey="Documents/View Documents">
+                <NavText>
+                   View Documents
+                </NavText>
+            </NavItem>
+            <NavItem eventKey="Documents/Upload Documents">
+                <NavText>
+                   Upload Documents
+                </NavText>
+            </NavItem>
+        </NavItem>
+        <NavItem eventKey="Appointment">
+            <NavIcon>
+                <i className="fa fa-fw fa-user-md" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+               Book an Appointment
+            </NavText>
+        </NavItem>
+        <NavItem eventKey="logout">
+            <NavIcon>
+                <i className="fa fa-fw fa-sign-out                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           " style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+              Logout
+            </NavText>
+        </NavItem>
+    </SideNav.Nav>
+</SideNav>
   );
 }
 
