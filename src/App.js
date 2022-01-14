@@ -1,7 +1,8 @@
 
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import './App.css';
+// import './App.css';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <NavItem eventKey="Documents/Upload Documents">
                 <NavText>
                    Upload Documents
+                   <br/><input type="file" multiple=""></input>
                 </NavText>
             </NavItem>
         </NavItem>
